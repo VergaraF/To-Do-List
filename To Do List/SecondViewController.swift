@@ -30,13 +30,22 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func addButtonListener(sender: AnyObject) {
         let newItem = ToDoItem(name: self.tittleItem.text!, description: self.descItem.text!)
+        
         print(newItem.getItemTittle())
         print(newItem.getItemDescription())
+        
+        resetTextFields()
+        
+        let alertController = UIAlertController(title: "Done!", message:
+            "Your item was added sucessfully", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
-        tittleItem.text = ""
-        descItem.text   = ""
+        resetTextFields()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -46,6 +55,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
+    }
+    
+    func resetTextFields(){
+        tittleItem.text = ""
+        descItem.text   = ""
+
     }
     
     
