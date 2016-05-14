@@ -13,6 +13,7 @@
 		D88028991CE6D1410020D0D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D88028971CE6D1410020D0D1 /* Main.storyboard */; };
 		D880289B1CE6D1410020D0D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D880289A1CE6D1410020D0D1 /* Assets.xcassets */; };
 		D880289E1CE6D1410020D0D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D880289C1CE6D1410020D0D1 /* LaunchScreen.storyboard */; };
+		D88028A61CE7E5720020D0D1 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88028A51CE7E5720020D0D1 /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D880289A1CE6D1410020D0D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D880289D1CE6D1410020D0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D880289F1CE6D1410020D0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D88028A51CE7E5720020D0D1 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D88028911CE6D1410020D0D1 /* AppDelegate.swift */,
 				D88028931CE6D1410020D0D1 /* FirstViewController.swift */,
 				D88028951CE6D1410020D0D1 /* SecondViewController.swift */,
+				D88028A51CE7E5720020D0D1 /* ToDoItem.swift */,
 				D88028971CE6D1410020D0D1 /* Main.storyboard */,
 				D880289A1CE6D1410020D0D1 /* Assets.xcassets */,
 				D880289C1CE6D1410020D0D1 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				D88028961CE6D1410020D0D1 /* SecondViewController.swift in Sources */,
 				D88028921CE6D1410020D0D1 /* AppDelegate.swift in Sources */,
+				D88028A61CE7E5720020D0D1 /* ToDoItem.swift in Sources */,
 				D88028941CE6D1410020D0D1 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
