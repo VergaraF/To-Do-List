@@ -8,11 +8,18 @@
 
 import UIKit
 
-class SecondViewController: UIViewController{
+class SecondViewController: UIViewController, UITextFieldDelegate{
+    
+    @IBOutlet var tittleItem: UITextField!
+    @IBOutlet var descItem: UITextField!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tittleItem.delegate = self
+        self.descItem.delegate   = self
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -21,10 +28,23 @@ class SecondViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addButtonListener(sender: AnyObject) {
+        
+    }
     
-
+    @IBAction func resetButtonListener(sender: AnyObject) {
+        tittleItem.text = ""
+        descItem.text   = ""
+    }
     
-
-
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }
 
