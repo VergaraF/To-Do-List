@@ -29,7 +29,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func addButtonListener(sender: AnyObject) {
-        
+        let newItem = ToDoItem(name: self.tittleItem.text!, description: self.descItem.text!)
+        print(newItem.getItemTittle())
+        print(newItem.getItemDescription())
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -45,6 +47,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+    
     
 }
 
