@@ -78,7 +78,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         }else{
             return items
         }
-        return nil
     }
     
     func printItemList(){

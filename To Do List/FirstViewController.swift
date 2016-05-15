@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.removeObjectForKey("itemsArray")
         // Do any additional setup after loading the view, typically from a nib.
     }
