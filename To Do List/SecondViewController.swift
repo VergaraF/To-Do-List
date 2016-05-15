@@ -22,13 +22,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         self.tittleItem.delegate = self
         self.descItem.delegate   = self
         
-        saveItemList(items)
+        items = retrieveItemList()!
         
-    //    saveItemOnArray()
-    //    let array = NSUserDefaults.standardUserDefaults().objectForKey("Items")! as! NSArray as! [ToDoItem]
-
-        
-        // Do any additional setup after loading the view, typically from a nib.
+           // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +37,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         print(newItem.getItemTittle())
         print(newItem.getItemDescription())
-        
- //       let array = retrieveItemsOnArray()
- //       updateLocalSavedItems()
 
-        
-   //     items = retrieveItemsOnArray()
         items.append(newItem)
         
-      //  saveItemOnArray()
+        saveItemList(items)
         
         resetTextFields()
         
@@ -59,17 +50,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
-        print(items)
+          printItemList()
         
-        
-     //   print(array)
-        
-   //     NSUserDefaults.standardUserDefaults().setObject(items, forKey: "array")
-
-        
-     //   NSUserDefaults.standardUserDefaults().setObject(items, forKey: "Item")
-        
-    //saveItemOnArray()
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -103,6 +85,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
         }
         return nil
+    }
+    
+    func printItemList(){
+        for x in items{
+            print(x.getItemTittle())
+            print(x.getItemDescription())
+        }
     }
     
 }
