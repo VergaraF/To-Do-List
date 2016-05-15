@@ -8,14 +8,25 @@
 
 import Foundation
 
-class ToDoItem{
+class ToDoItem: NSObject, NSCoding{
     
     private var itemTittle: String
     private var itemDescription: String
     
     init (name: String, description: String){
-        self.itemTittle = name
+        self.itemTittle      = name
         self.itemDescription = description
+        super.init()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        self.itemTittle      = aDecoder.decodeObjectForKey("itemTittle")      as! String
+        self.itemDescription = aDecoder.decodeObjectForKey("itemDescription") as! String
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.itemTittle,      forKey: "itemTittle")
+        aCoder.encodeObject(self.itemDescription, forKey: "itemDescription")
     }
     
     func setItemTittle(name: String){
