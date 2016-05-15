@@ -12,6 +12,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var tittleItem: UITextField!
     @IBOutlet var descItem: UITextField!
+    
+    var items = [ToDoItem]()
 
     
     override func viewDidLoad() {
@@ -19,6 +21,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         self.tittleItem.delegate = self
         self.descItem.delegate   = self
+    //    saveItemOnArray()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -34,6 +37,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         print(newItem.getItemTittle())
         print(newItem.getItemDescription())
         
+   //     items = retrieveItemsOnArray()
+        items.append(newItem)
+        
+      //  saveItemOnArray()
+        
         resetTextFields()
         
         let alertController = UIAlertController(title: "Done!", message:
@@ -42,6 +50,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
+        print(items)
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -61,6 +70,18 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         tittleItem.text = ""
         descItem.text   = ""
 
+    }
+    
+    func saveItemOnArray(){
+        NSUserDefaults.standardUserDefaults().setObject(items, forKey: "Items")
+    }
+    
+    func retrieveItemsOnArray() -> [ToDoItem]{
+        let array = NSUserDefaults.standardUserDefaults().objectForKey("Items")! as! NSArray as! [ToDoItem]
+        if array.count != 0{
+            return array
+        }
+        return items
     }
     
     
