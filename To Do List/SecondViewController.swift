@@ -21,7 +21,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         self.tittleItem.delegate = self
         self.descItem.delegate   = self
+        
+        saveItemList(items)
+        
     //    saveItemOnArray()
+    //    let array = NSUserDefaults.standardUserDefaults().objectForKey("Items")! as! NSArray as! [ToDoItem]
+
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -37,6 +42,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         print(newItem.getItemTittle())
         print(newItem.getItemDescription())
         
+ //       let array = retrieveItemsOnArray()
+ //       updateLocalSavedItems()
+
+        
    //     items = retrieveItemsOnArray()
         items.append(newItem)
         
@@ -51,6 +60,16 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         self.presentViewController(alertController, animated: true, completion: nil)
         print(items)
+        
+        
+     //   print(array)
+        
+   //     NSUserDefaults.standardUserDefaults().setObject(items, forKey: "array")
+
+        
+     //   NSUserDefaults.standardUserDefaults().setObject(items, forKey: "Item")
+        
+    //saveItemOnArray()
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -72,18 +91,19 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
 
     }
     
-    func saveItemOnArray(){
-        NSUserDefaults.standardUserDefaults().setObject(items, forKey: "Items")
+    func saveItemList(item:[ToDoItem]) {
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(item as NSArray)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(archivedObject, forKey: "itemsArray")
+        defaults.synchronize()
     }
     
-    func retrieveItemsOnArray() -> [ToDoItem]{
-        let array = NSUserDefaults.standardUserDefaults().objectForKey("Items")! as! NSArray as! [ToDoItem]
-        if array.count != 0{
-            return array
+    func retrieveItemList() -> [ToDoItem]? {
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
+            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
         }
-        return items
+        return nil
     }
-    
     
 }
 
