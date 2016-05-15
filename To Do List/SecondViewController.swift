@@ -15,7 +15,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     
     var items = [ToDoItem]()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +23,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         items = retrieveItemList()!
         
-           // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +42,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         saveItemList(items)
         
         resetTextFields()
+        validateInput(newItem.getItemTittle(), description: newItem.getItemDescription())
         
-        let alertController = UIAlertController(title: "Done!", message:
-            "Your item was added sucessfully", preferredStyle: UIAlertControllerStyle.Alert)
         
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-          printItemList()
-        
+        printItemList()
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -70,7 +64,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     func resetTextFields(){
         tittleItem.text = ""
         descItem.text   = ""
-
     }
     
     func saveItemList(item:[ToDoItem]) {
@@ -91,6 +84,23 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         for x in items{
             print(x.getItemTittle())
             print(x.getItemDescription())
+        }
+    }
+    
+    func triggerAlertController(title: String, description: String){
+        let alertController = UIAlertController(title: title, message:
+            description, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func validateInput(tittle: String, description: String){
+        if tittle == "" || description == "" {
+            triggerAlertController("Error", description: "Empty values are not allowed. Please, type something.")
+        }else{
+            triggerAlertController("Done!", description: "Your item was added sucessfully.")
         }
     }
     
