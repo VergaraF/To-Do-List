@@ -34,16 +34,15 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     @IBAction func addButtonListener(sender: AnyObject) {
         let newItem = ToDoItem(name: self.tittleItem.text!, description: self.descItem.text!)
         
-        print(newItem.getItemTittle())
-        print(newItem.getItemDescription())
+      //  print(newItem.getItemTittle())
+      //  print(newItem.getItemDescription())
 
-        items.append(newItem)
+      //  items.append(newItem)
+        validateInput(newItem.getItemTittle(), description: newItem.getItemDescription(), toDoItemObject: newItem)
         
         saveItemList(items)
         
         resetTextFields()
-        validateInput(newItem.getItemTittle(), description: newItem.getItemDescription())
-        
         
         printItemList()
     }
@@ -76,6 +75,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     func retrieveItemList() -> [ToDoItem]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
+        }else{
+            return items
         }
         return nil
     }
@@ -96,10 +97,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func validateInput(tittle: String, description: String){
+    func validateInput(tittle: String, description: String, toDoItemObject: ToDoItem){
         if tittle == "" || description == "" {
             triggerAlertController("Error", description: "Empty values are not allowed. Please, type something.")
         }else{
+            items.append(toDoItemObject)
             triggerAlertController("Done!", description: "Your item was added sucessfully.")
         }
     }
