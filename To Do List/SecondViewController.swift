@@ -34,10 +34,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     @IBAction func addButtonListener(sender: AnyObject) {
         let newItem = ToDoItem(name: self.tittleItem.text!, description: self.descItem.text!)
         
-      //  print(newItem.getItemTittle())
-      //  print(newItem.getItemDescription())
-
-      //  items.append(newItem)
         validateInput(newItem.getItemTittle(), description: newItem.getItemDescription(), toDoItemObject: newItem)
         
         saveItemList(items)

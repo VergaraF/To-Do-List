@@ -18,27 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPy-1S-V1f">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="yRX-h3-xK0"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
                 </viewController>
@@ -58,19 +45,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKh-Vh-4tM">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="23"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Add" id="dbY-Bf-Stg"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an item to your list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-CT-WSu">
                                 <rect key="frame" x="20" y="95" width="560" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="d1K-Ap-onL"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="ofn-7k-HVq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -79,6 +58,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tittle of your item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lq-Vd-yQb">
                                 <rect key="frame" x="20" y="155" width="560" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8v2-jf-dDu"/>
                                     <constraint firstAttribute="height" constant="30" id="kX2-Zb-EGF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -88,6 +68,7 @@
                                 <rect key="frame" x="20" y="203" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2Hw-OV-bq9"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="z6o-0E-xs7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -97,6 +78,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oJi-0Y-lNw" secondAttribute="height" multiplier="9:1" id="DEh-eE-zP8"/>
                                     <constraint firstAttribute="height" constant="30" id="zTc-X8-7qo"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="zYQ-ek-tJW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="Reset">
@@ -111,6 +93,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6qX-5d-Rup" secondAttribute="height" multiplier="46:5" id="9dv-rk-LXM"/>
                                     <constraint firstAttribute="height" constant="30" id="VYo-Vj-V4Q"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="lo4-Gr-2Tm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                 <state key="normal" title="Add">
@@ -120,26 +103,40 @@
                                     <action selector="addButtonListener:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="5lX-w4-0dM"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKh-Vh-4tM">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="exg-1i-8gq"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="23"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Add" id="dbY-Bf-Stg"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B0T-fH-3ah" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="5ox-em-49e"/>
-                            <constraint firstItem="jLG-CT-WSu" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="5ya-Nj-oaU"/>
-                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="top" secondItem="jLG-CT-WSu" secondAttribute="bottom" constant="14" id="ENE-Zb-vuJ"/>
-                            <constraint firstItem="B0T-fH-3ah" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="HN5-X3-P3m"/>
-                            <constraint firstItem="6qX-5d-Rup" firstAttribute="top" secondItem="B0T-fH-3ah" secondAttribute="bottom" constant="41" id="PT4-rc-D2T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vKh-Vh-4tM" secondAttribute="trailing" constant="-20" id="Sdd-ZC-yJw"/>
-                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="UaI-ts-Y6c"/>
-                            <constraint firstItem="B0T-fH-3ah" firstAttribute="top" secondItem="6lq-Vd-yQb" secondAttribute="bottom" constant="18" id="bMK-He-AIE"/>
-                            <constraint firstItem="oJi-0Y-lNw" firstAttribute="top" secondItem="6qX-5d-Rup" secondAttribute="bottom" constant="33" id="bfX-oi-wl6"/>
-                            <constraint firstItem="jLG-CT-WSu" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="bo5-wC-GYc"/>
-                            <constraint firstItem="vKh-Vh-4tM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="lU2-72-ihe"/>
-                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="m43-DF-dr9"/>
-                            <constraint firstItem="jLG-CT-WSu" firstAttribute="top" secondItem="vKh-Vh-4tM" secondAttribute="bottom" constant="23" id="mDS-SE-Ur1"/>
-                            <constraint firstItem="oJi-0Y-lNw" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="mg6-KS-RVj"/>
-                            <constraint firstItem="6qX-5d-Rup" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="oKp-nh-KIC"/>
-                            <constraint firstItem="B0T-fH-3ah" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="pbe-oc-9sX"/>
-                            <constraint firstItem="vKh-Vh-4tM" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="y0W-J3-7o3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKh-Vh-4tM" secondAttribute="trailing" constant="-20" id="37S-SD-0q0"/>
+                            <constraint firstItem="B0T-fH-3ah" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="7zc-2A-YZB"/>
+                            <constraint firstItem="oJi-0Y-lNw" firstAttribute="top" secondItem="6qX-5d-Rup" secondAttribute="bottom" constant="33" id="CeY-md-ILj"/>
+                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Gz5-wj-OFt"/>
+                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="top" secondItem="jLG-CT-WSu" secondAttribute="bottom" constant="14" id="HRs-JU-XgP"/>
+                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="MIA-DL-blV"/>
+                            <constraint firstItem="vKh-Vh-4tM" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="N3X-D9-pKr"/>
+                            <constraint firstItem="B0T-fH-3ah" firstAttribute="top" secondItem="6lq-Vd-yQb" secondAttribute="bottom" constant="18" id="Sbe-2L-y5y"/>
+                            <constraint firstItem="B0T-fH-3ah" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="T15-Xu-Nes"/>
+                            <constraint firstItem="oJi-0Y-lNw" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Wes-gn-zyE"/>
+                            <constraint firstItem="6qX-5d-Rup" firstAttribute="top" secondItem="B0T-fH-3ah" secondAttribute="bottom" constant="41" id="bAT-Ye-Pad"/>
+                            <constraint firstItem="jLG-CT-WSu" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="djz-gS-Rgy"/>
+                            <constraint firstItem="B0T-fH-3ah" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="g9o-oS-WiO"/>
+                            <constraint firstItem="vKh-Vh-4tM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="gI5-wM-ww0"/>
+                            <constraint firstItem="jLG-CT-WSu" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="ny3-uj-HEI"/>
+                            <constraint firstItem="jLG-CT-WSu" firstAttribute="top" secondItem="vKh-Vh-4tM" secondAttribute="bottom" constant="31" id="s5M-4Q-jlb"/>
+                            <constraint firstItem="jLG-CT-WSu" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="skF-OU-IfD"/>
+                            <constraint firstItem="6lq-Vd-yQb" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="vKt-fI-f2H"/>
+                            <constraint firstItem="6qX-5d-Rup" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="yML-Xy-zg2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="second" id="cPa-gy-q4n"/>
