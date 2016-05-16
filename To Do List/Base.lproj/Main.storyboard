@@ -18,14 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPy-1S-V1f">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPy-1S-V1f">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2BJ-Z4-tci"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="23"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="yRX-h3-xK0"/>
+                                    <navigationItem title="Home" id="yRX-h3-xK0"/>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gKJ-fa-aaz">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Wgi-b1-XSl">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wgi-b1-XSl" id="Wzc-sD-FZI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="hMP-fp-9XC"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="OKI-hh-lYp"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nPy-1S-V1f" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="6EB-dg-Jd4"/>
+                            <constraint firstItem="gKJ-fa-aaz" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="9tb-VN-WF1"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="gKJ-fa-aaz" secondAttribute="bottom" id="DzB-Z2-RmF"/>
+                            <constraint firstItem="gKJ-fa-aaz" firstAttribute="top" secondItem="nPy-1S-V1f" secondAttribute="bottom" id="Lpb-XP-WsS"/>
+                            <constraint firstItem="nPy-1S-V1f" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="cOB-OZ-RIw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gKJ-fa-aaz" secondAttribute="trailing" constant="-20" id="gT1-mI-fh8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nPy-1S-V1f" secondAttribute="trailing" constant="-20" id="hVg-bc-lsi"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
                 </viewController>

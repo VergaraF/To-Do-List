@@ -13,7 +13,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var tittleItem: UITextField!
     @IBOutlet var descItem: UITextField!
     
-    var items = [ToDoItem]()
+  //  var items = [ToDoItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
