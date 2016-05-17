@@ -40,10 +40,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         
         resetTextFields()
         
+        //For testing purposes
         printItemList()
-        
-    
-    
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
@@ -70,14 +68,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         defaults.setObject(archivedObject, forKey: "itemsArray")
         defaults.synchronize()
     }
-    
- /*   func retrieveItemList() -> [ToDoItem]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
-        }else{
-            return items
-        }
-    }*/
     
     func printItemList(){
         for x in items{

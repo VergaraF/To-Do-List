@@ -17,13 +17,8 @@ class FirstViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      //  toDoItemsList.reloadData()
         
         items = retrieveItemList()!
-      //  let userDefaults = NSUserDefaults.standardUserDefaults()
-       // userDefaults.removeObjectForKey("itemsArray")
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
   
