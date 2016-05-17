@@ -12,16 +12,23 @@ var items = [ToDoItem]()
 
 class FirstViewController: UIViewController, UITableViewDelegate {
     
-   // let tableViewSize = items.count
-  //  var items = [ToDoItem]()
+    
+    @IBOutlet var toDoItemsList: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  toDoItemsList.reloadData()
         
         items = retrieveItemList()!
       //  let userDefaults = NSUserDefaults.standardUserDefaults()
        // userDefaults.removeObjectForKey("itemsArray")
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+  
+    override func viewDidAppear(animated: Bool) {
+        toDoItemsList.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

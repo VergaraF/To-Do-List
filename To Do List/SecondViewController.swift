@@ -41,6 +41,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         resetTextFields()
         
         printItemList()
+        
+    
+    
     }
     
     @IBAction func resetButtonListener(sender: AnyObject) {
