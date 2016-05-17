@@ -152,12 +152,12 @@
                   moduleName = "To Do List"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vergaraF/Desktop/To%20Do%20List/To%20Do%20List/SecondViewController.swift"
-                  timestampString = "485042345.90453"
+                  timestampString = "485142471.207136"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "48">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -167,7 +167,7 @@
                   moduleName = "To Do List"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vergaraF/Desktop/To%20Do%20List/To%20Do%20List/SecondViewController.swift"
-                  timestampString = "485042345.904747"
+                  timestampString = "485142471.207418"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -182,12 +182,12 @@
                   moduleName = "To Do List"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vergaraF/Desktop/To%20Do%20List/To%20Do%20List/SecondViewController.swift"
-                  timestampString = "485042345.904867"
+                  timestampString = "485142471.207618"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "114">
+                  offsetFromSymbolStart = "108">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -197,12 +197,12 @@
                   moduleName = "To Do List"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vergaraF/Desktop/To%20Do%20List/To%20Do%20List/SecondViewController.swift"
-                  timestampString = "485042345.90498"
+                  timestampString = "485142471.207852"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "56">
+                  offsetFromSymbolStart = "68">
                </Location>
             </Locations>
          </BreakpointContent>

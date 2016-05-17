@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
       //  toDoItemsList.reloadData()
         
         items = retrieveItemList()!
@@ -34,6 +34,20 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            items.removeAtIndex(indexPath.row)
+            print("delete")
+            toDoItemsList.reloadData()
+            saveItemList(items)
+
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

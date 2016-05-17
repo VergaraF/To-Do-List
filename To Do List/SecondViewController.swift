@@ -114,3 +114,10 @@ func retrieveItemList() -> [ToDoItem]? {
     }
 }
 
+func saveItemList(item:[ToDoItem]) {
+    let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(item as NSArray)
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setObject(archivedObject, forKey: "itemsArray")
+    defaults.synchronize()
+}
+
