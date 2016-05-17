@@ -12,7 +12,7 @@ var items = [ToDoItem]()
 
 class FirstViewController: UIViewController, UITableViewDelegate {
     
-    let emptyTable = 3
+   // let tableViewSize = items.count
   //  var items = [ToDoItem]()
 
     override func viewDidLoad() {
@@ -30,29 +30,22 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-
-        return 3
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.Default,reuseIdentifier: "Cell")
-        
-
-        cell.textLabel!.text = "test"
+    
+        cell.textLabel!.numberOfLines = 2;
+        cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        cell.textLabel!.text = items[indexPath.row].getItemTittle() + "\n" + items[indexPath.row].getItemDescription()
 
 
 
         return cell
     }
-    
-    func retrieveItemList() -> [ToDoItem]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
-        }else{
-            return items
-        }
-    }
-
 
 }
+
+
 

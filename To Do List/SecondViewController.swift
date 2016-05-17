@@ -68,13 +68,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         defaults.synchronize()
     }
     
-    func retrieveItemList() -> [ToDoItem]? {
+ /*   func retrieveItemList() -> [ToDoItem]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
         }else{
             return items
         }
-    }
+    }*/
     
     func printItemList(){
         for x in items{
@@ -101,5 +101,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+}
+
+func retrieveItemList() -> [ToDoItem]? {
+    if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("itemsArray") as? NSData {
+        return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [ToDoItem]
+    }else{
+        return items
+    }
 }
 
